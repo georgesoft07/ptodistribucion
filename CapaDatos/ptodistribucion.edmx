@@ -4,7 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BDDISTRIBUCIONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BDDISTRIBUCIONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BDDISTRIBUCION.dbo.ACCESO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="ACCESO">
+          <Key>
+            <PropertyRef Name="cdmodulo" />
+            <PropertyRef Name="activo" />
+          </Key>
+          <Property Name="CodEmpresa" Type="varchar(max)" />
+          <Property Name="cdnivel" Type="char" MaxLength="10" />
+          <Property Name="cdmodulo" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="ciudad">
           <Key>
             <PropertyRef Name="CODCIUDAD" />
@@ -265,6 +277,14 @@
           <EntitySet Name="Tipo_Pago" EntityType="Self.Tipo_Pago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TIPONEGOCIO" EntityType="Self.TIPONEGOCIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TIPOPRE" EntityType="Self.TIPOPRE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ACCESO" EntityType="Self.ACCESO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ACCESO].[CodEmpresa] AS [CodEmpresa], 
+    [ACCESO].[cdnivel] AS [cdnivel], 
+    [ACCESO].[cdmodulo] AS [cdmodulo], 
+    [ACCESO].[activo] AS [activo]
+    FROM [dbo].[ACCESO] AS [ACCESO]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_CLIENTE_ciudad" Association="Self.FK_CLIENTE_ciudad">
             <End Role="ciudad" EntitySet="ciudad" />
             <End Role="CLIENTE" EntitySet="CLIENTE" />
@@ -298,8 +318,7 @@
             <End Role="CLIENTE" EntitySet="CLIENTE" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BDDISTRIBUCIONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -611,7 +630,18 @@
             <End Role="TIPOPRE" EntitySet="TIPOPRE" />
             <End Role="CLIENTE" EntitySet="CLIENTE" />
           </AssociationSet>
+          <EntitySet Name="ACCESO" EntityType="BDDISTRIBUCIONModel.ACCESO" />
         </EntityContainer>
+        <EntityType Name="ACCESO">
+          <Key>
+            <PropertyRef Name="cdmodulo" />
+            <PropertyRef Name="activo" />
+          </Key>
+          <Property Name="CodEmpresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cdnivel" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="cdmodulo" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -778,6 +808,16 @@
                 <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
                 <ScalarProperty Name="APLIOTROSCTO" ColumnName="APLIOTROSCTO" />
                 <ScalarProperty Name="DS" ColumnName="DS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACCESO">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.ACCESO">
+              <MappingFragment StoreEntitySet="ACCESO">
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="cdmodulo" ColumnName="cdmodulo" />
+                <ScalarProperty Name="cdnivel" ColumnName="cdnivel" />
+                <ScalarProperty Name="CodEmpresa" ColumnName="CodEmpresa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

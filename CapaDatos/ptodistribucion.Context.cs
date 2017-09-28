@@ -35,5 +35,6 @@ namespace CapaDatos
         public virtual DbSet<Tipo_Pago> Tipo_Pago { get; set; }
         public virtual DbSet<TIPONEGOCIO> TIPONEGOCIO { get; set; }
         public virtual DbSet<TIPOPRE> TIPOPRE { get; set; }
+        public virtual DbSet<ACCESO> ACCESO { get; set; }
     }
 }

@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACCESO.cs">
+      <DependentUpon>ptodistribucion.tt</DependentUpon>
+    </Compile>
     <Compile Include="ciudad.cs">
       <DependentUpon>ptodistribucion.tt</DependentUpon>
     </Compile>

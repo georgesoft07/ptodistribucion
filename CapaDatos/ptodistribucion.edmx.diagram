@@ -23,6 +23,7 @@
         <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_Tipo_Pago" ManuallyRouted="false" />
         <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_TIPONEGOCIO" ManuallyRouted="false" />
         <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_TIPOPRE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.ACCESO" Width="1.5" PointX="5.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
