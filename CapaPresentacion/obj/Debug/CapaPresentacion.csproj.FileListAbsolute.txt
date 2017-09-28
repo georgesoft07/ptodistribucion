@@ -1,0 +1,12 @@
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\bin\Debug\CapaDatos.exe
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\bin\Debug\EntityFramework.dll
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\bin\Debug\EntityFramework.SqlServer.dll
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\bin\Debug\EntityFramework.xml
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\bin\Debug\EntityFramework.SqlServer.xml
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\PTODISTRIBUCION\SlnPto\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
