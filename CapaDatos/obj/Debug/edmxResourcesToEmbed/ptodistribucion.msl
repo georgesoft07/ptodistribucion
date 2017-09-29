@@ -174,5 +174,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NSP_INSERT_TIPONEGOCIO" FunctionName="BDDISTRIBUCIONModel.Store.NSP_INSERT_TIPONEGOCIO" />
   </EntityContainerMapping>
 </Mapping>

@@ -261,6 +261,11 @@ advertencia 6002: La tabla o vista 'BDDISTRIBUCION.dbo.ACCESO' no tiene definida
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="NSP_INSERT_TIPONEGOCIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CODEMPRESA" Type="varchar" Mode="In" />
+    <Parameter Name="CODIGO" Type="varchar" Mode="In" />
+    <Parameter Name="DESCRIPCION" Type="varchar" Mode="In" />
+  </Function>
   <EntityContainer Name="BDDISTRIBUCIONModelStoreContainer">
     <EntitySet Name="ciudad" EntityType="Self.ciudad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />

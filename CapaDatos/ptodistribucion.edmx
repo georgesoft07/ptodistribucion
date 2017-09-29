@@ -266,6 +266,11 @@ advertencia 6002: La tabla o vista 'BDDISTRIBUCION.dbo.ACCESO' no tiene definida
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="NSP_INSERT_TIPONEGOCIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODEMPRESA" Type="varchar" Mode="In" />
+          <Parameter Name="CODIGO" Type="varchar" Mode="In" />
+          <Parameter Name="DESCRIPCION" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="BDDISTRIBUCIONModelStoreContainer">
           <EntitySet Name="ciudad" EntityType="Self.ciudad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
@@ -631,6 +636,11 @@ advertencia 6002: La tabla o vista 'BDDISTRIBUCION.dbo.ACCESO' no tiene definida
             <End Role="CLIENTE" EntitySet="CLIENTE" />
           </AssociationSet>
           <EntitySet Name="ACCESO" EntityType="BDDISTRIBUCIONModel.ACCESO" />
+          <FunctionImport Name="NSP_INSERT_TIPONEGOCIO">
+            <Parameter Name="CODEMPRESA" Mode="In" Type="String" />
+            <Parameter Name="CODIGO" Mode="In" Type="String" />
+            <Parameter Name="DESCRIPCION" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="ACCESO">
           <Key>
@@ -821,6 +831,7 @@ advertencia 6002: La tabla o vista 'BDDISTRIBUCION.dbo.ACCESO' no tiene definida
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="NSP_INSERT_TIPONEGOCIO" FunctionName="BDDISTRIBUCIONModel.Store.NSP_INSERT_TIPONEGOCIO" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -12,6 +12,8 @@ namespace CapaDatos
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class BDDISTRIBUCIONEntities : DbContext
     {
@@ -36,5 +38,22 @@ namespace CapaDatos
         public virtual DbSet<TIPONEGOCIO> TIPONEGOCIO { get; set; }
         public virtual DbSet<TIPOPRE> TIPOPRE { get; set; }
         public virtual DbSet<ACCESO> ACCESO { get; set; }
+    
+        public virtual int NSP_INSERT_TIPONEGOCIO(string cODEMPRESA, string cODIGO, string dESCRIPCION)
+        {
+            var cODEMPRESAParameter = cODEMPRESA != null ?
+                new ObjectParameter("CODEMPRESA", cODEMPRESA) :
+                new ObjectParameter("CODEMPRESA", typeof(string));
+    
+            var cODIGOParameter = cODIGO != null ?
+                new ObjectParameter("CODIGO", cODIGO) :
+                new ObjectParameter("CODIGO", typeof(string));
+    
+            var dESCRIPCIONParameter = dESCRIPCION != null ?
+                new ObjectParameter("DESCRIPCION", dESCRIPCION) :
+                new ObjectParameter("DESCRIPCION", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NSP_INSERT_TIPONEGOCIO", cODEMPRESAParameter, cODIGOParameter, dESCRIPCIONParameter);
+        }
     }
 }

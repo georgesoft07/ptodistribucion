@@ -309,6 +309,11 @@
       <End Role="CLIENTE" EntitySet="CLIENTE" />
     </AssociationSet>
     <EntitySet Name="ACCESO" EntityType="BDDISTRIBUCIONModel.ACCESO" />
+    <FunctionImport Name="NSP_INSERT_TIPONEGOCIO">
+      <Parameter Name="CODEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="CODIGO" Mode="In" Type="String" />
+      <Parameter Name="DESCRIPCION" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="ACCESO">
     <Key>
